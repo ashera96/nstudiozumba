@@ -44,14 +44,15 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
     <!--Modernizr Css-->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
-    <script src="assets/js/initfirebase.js"></script>
+
 
 
     <!--[if lt IE 9]>
     <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+    <script src="assets/js/initfirebase.js"></script>
 
 </head>
 
@@ -151,39 +152,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div id="packages" class="row">
 
-
-                    <!--@if(count($packages)>0)-->
-                    <!--@foreach($packages as $package)-->
-                    <!--<div class="col-md-6">-->
-                        <!--<div class="price-box">-->
-                            <!--<div class="price-empty">-->
-                            <!--</div>-->
-                            <!--<div class="price-quantity">-->
-                                <!--<div class="qnty-box">-->
-                                    <!--<div class="box-element">-->
-                                        <!--<h5>Rs. {{$package->price}}</h5>-->
-                                        <!--<p>Monthly</p>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="price-dtl">-->
-                                    <!--<ul>-->
-                                        <!--<li class="first-child"><h3>{{$package->name}} Package</h3></li>-->
-                                        <!--<li>{{$package->services}}</li>-->
-                                        <!--<li><h3>Rs. {{$package->price}}</h3></li>-->
-                                    <!--</ul>-->
-                                    <!--<div class="price-btn bttn">-->
-                                        <!--<a href="{{ route('login') }}" class="btn btn-primary">Buy now</a>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--&lt;!&ndash; /.col &ndash;&gt;-->
-                    <!--@endforeach-->
-                    <!--@endif-->
-
+                    <!-- /.col -->
 
                 </div>
                 <!-- /.row -->
@@ -247,8 +218,39 @@
             </div>
         </footer>
     </div>
+    <script>
+        var data = firebase.database().ref('packages');
 
-	
+        data.on('value', function(snapshot) {
+            document.getElementById('packages').innerHTML ="";
+            snapshot.val().forEach(function (a) {
+                document.getElementById('packages').innerHTML += ' <div class="col-md-6">\n' +
+                    '                        <div class="price-box">\n' +
+                    '                            <div class="price-empty">\n' +
+                    '                            </div>\n' +
+                    '                            <div class="price-quantity">\n' +
+                    '                                <div class="qnty-box">\n' +
+                    '                                    <div class="box-element">\n' +
+                    '                                        <h5>Rs.'+a.amount+'</h5>\n' +
+                    '                                        <p>Monthly</p>\n' +
+                    '                                    </div>\n' +
+                    '                                </div>\n' +
+                    '                                <div class="price-dtl">\n' +
+                    '                                    <ul>\n' +
+                    '                                        <li class="first-child"><h3>'+a.name+'</h3></li>\n' +
+                    '                                        <li>services**</li>\n' +
+                    '                                        <li><h3>Rs. price**</h3></li>\n' +
+                    '                                    </ul>\n' +
+                    '\n' +
+                    '                                </div>\n' +
+                    '                            </div>\n' +
+                    '                        </div>\n' +
+                    '                    </div>'
+            })
+            // window.alert(snapshot.val().length);
+        });
+
+    </script>
     <!--All Js Here-->
     <!-- jquery latest version -->
     <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/vendor/jquery-3.2.1.min.js"></script>
