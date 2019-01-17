@@ -8,3 +8,14 @@ var config = {
     messagingSenderId: "435999712713"
 };
 firebase.initializeApp(config);
+
+function signin() {
+    var email=$('#email').val();
+    var password=$('#password').val();
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        document.getElementById('error').innerHTML="Invalid Credentials..!";
+    });
+}
