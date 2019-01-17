@@ -12,11 +12,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicons -->
-    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
-    <link rel="apple-touch-icon" href="assets/favicon/apple-icon-57x57.html">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-icon-144x144.png">
+    <link rel="shortcut icon" href="assets/favicon/logo144x144.png">
+    <link rel="apple-touch-icon" href="assets/favicon/logo_57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/logo_72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/logo114x114.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/logo144x144.png">
 
     <!--All Css Here-->
 
@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="assets/css/vendor/jquery-ui.min.css">
     <!--Style Css-->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dashboard-style.css">
     <!--Responsive Css-->
     <link rel="stylesheet" href="assets/css/responsive.css">
     <!--Modernizr Css-->
@@ -61,85 +62,45 @@
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="container">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="index.html"><img src="assets/images/logo/logo.png"  alt="logo img"></a>
+                        <a class="navbar-brand" href="index.html"><img src="assets/images/logo/nav_logo.png"  alt="N_Studio_Zumba_Logo"></a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                     </div>
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link " href="index.html" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  home<span class="sr-only">(current)</span>
+                            <li class="nav-item">
+                                <a class="nav-link " href="index.html">
+                                    home<span class="sr-only">(current)</span>
                                 </a>
-                                <div class="dropdown-menu animation  slideUpIn">
-                                    <a class="dropdown-item" href="index.html">home1</a>
-                                    <a class="dropdown-item" href="home2.html">home2</a>
-                                </div>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link " href="about-us.html" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  about<span class="sr-only">(current)</span>
+                            <li class="nav-item">
+                                <a class="nav-link " href="about-us.html">
+                                    about<span class="sr-only">(current)</span>
                                 </a>
-                                <div class="dropdown-menu animation  slideUpIn">
-                                    <a class="dropdown-item" href="about-us.html">about us</a>
-                                    <a class="dropdown-item" href="services.html">services</a>
-                                    <a class="dropdown-item" href="service-single.html">service single</a>
-                                    <a class="dropdown-item" href="trainers.html">trainers</a>
-                                </div>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  pages<span class="sr-only">(current)</span>
+                            <li class="nav-item">
+                                <a class="nav-link " href="gallery.html">
+                                    gallery<span class="sr-only">(current)</span>
                                 </a>
-                                <div class="dropdown-menu animation  slideUpIn">
-                                    <a class="dropdown-item" href="pricing-plan.html">pricing-plan</a>
-                                    <a class="dropdown-item" href="contact.html">contact</a>
-                                    <a class="dropdown-item" href="contact-2.html">contact 2</a>
-                                    <a class="dropdown-item" href="error.html">404</a>
-                                </div>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  classes<span class="sr-only">(current)</span>
+                            <li class="nav-item">
+                                <a class="nav-link " href="pricing-plan.html">
+                                    classes<span class="sr-only">(current)</span>
                                 </a>
-                                <div class="dropdown-menu animation  slideUpIn">
-                                    <a class="dropdown-item" href="single-class.html">single class</a>
-                                    <a class="dropdown-item" href="booking.html">booking</a>
-                                </div>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  shop<span class="sr-only">(current)</span>
+                            <li class="nav-item">
+                                <a class="nav-link " href="schedule.html">
+                                    schedule<span class="sr-only">(current)</span>
                                 </a>
-                                <div class="dropdown-menu animation  slideUpIn">
-                                    <a class="dropdown-item" href="shopping.html">shopping</a>
-                                    <a class="dropdown-item" href="single-product.html">single product</a>
-                                    <a class="dropdown-item" href="shopping-cart.html">shopping cart</a>
-                                    <a class="dropdown-item" href="checkout.html">checkout</a>
-                                </div>
                             </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="schedule.html">schedule</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  blog<span class="sr-only">(current)</span>
+                            <li class="nav-item">
+                                <a class="nav-link " href="testimonials.html">
+                                    testimonials<span class="sr-only">(current)</span>
                                 </a>
-                                <div class="dropdown-menu animation  slideUpIn">
-                                    <a class="dropdown-item" href="blog.html">blog</a>
-                                    <a class="dropdown-item" href="blog-2.html">blog 2</a>
-                                    <a class="dropdown-item" href="blog-left.html">blog left</a>
-                                </div>
                             </li>
-                            <li class="nav-item d-none d-lg-inline">
-                                <div class="icon-menu">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                        <li>|</li>
-                                        <li><a href="#" class="search-btn search-box-btn"><i class="fa fa-search"></i></a></li>
-                                    </ul>
-                                </div>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">contact</a>
                             </li>
                         </ul>
                     </div>
@@ -148,396 +109,54 @@
         </header>
         <!--header end-->
 
-        <!-- page title & breadcrumbs start -->
-        <div class="pricing-plan-bg page-head parallax overlay">
-            <div class="container">
+       <!--Admin dashboard-area start-->
+        <div class="about-area pad90">
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="section-title text-center">
-                            <h3>SCHEDULE</h3>
+
+                    <!--Sidebar-area start-->
+                    <div class="col-lg-2 col-md-3 sideFix " style="position: fixed;">
+                        <div class="list-group shadow-sm">
+                            <a href="/admin/dashboard" class="list-group-item side-bar {{Request::is('admin/dashboard') ? "active" : ""}}"><i class="fa fa-cog fa-lg mr-1"></i> Dashboard</a>
+                            <a href="/admin/receptionist" class="list-group-item  side-bar {{Request::is('admin/receptionist') ? "active" : ""}}"><i class="fa fa-user fa-lg mr-1"></i> Receptionist</a>
+                            <a href="/admin/customers" class="list-group-item side-bar {{Request::is('admin/customers') ? "active" : ""}}"><i class="fa fa-users fa-lg mr-1"></i> Customers</a>
+                            <a href="/admin/dashboard/admin_gallery" class="list-group-item side-bar {{Request::is('admin/dashboard/admin_gallery') ? "active" : ""}}"><i class="fa fa-image fa-lg mr-1"></i> Gallery</a>
+                            <a href="/admin/dashboard/class_packages" class="list-group-item side-bar {{Request::is('admin/dashboard/class_packages') ? "active" : ""}}"><i class="fa fa-clipboard fa-lg mr-1"></i> Classes</a>
+                            <a href="/admin/schedules" class="list-group-item side-bar {{Request::is('admin/schedules') ? "active" : ""}}"><i class="fa fa-calendar fa-lg mr-1"></i> Schedules</a>
+                            <a href="/admin/create_notifications" class="list-group-item side-bar {{Request::is('admin/create_notifications') ? "active" : ""}}"><i class="fa fa-bell fa-lg mr-1"></i> Notifications</a>
+                            <a href="/admin/payments" class="list-group-item side-bar {{Request::is('admin/payments') ? "active" : ""}}"><i class="fa fa-dollar fa-lg mr-1"></i> Payments</a>
+
+
+                            <a href="/admin/reports" class="list-group-item side-bar {{Request::is('admin/reports') ? "active" : ""}}     "><i class="fa fa-file fa-lg mr-1"></i> Reports</a>
                         </div>
                     </div>
-                    <!-- /.colour-service-1-->
-                    <div class="col-md-12">
-                        <ol class="breadcrumb">
-                            <li><a href="index.html">home</a></li>
-                            <li>।</li>
-                            <li>SCHEDULE</li>
-                        </ol>
-                    </div>
-                    <!-- /.col -->
-                </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.container -->
-        </div>
-        <!-- /.page-header -->
-        <!-- page title & breadcrumbs end -->
+                    <!--Sidebar-area end-->
 
-        <!--schedule-area start-->
-        <div class="schedule-area parallax pad90">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section-title text-center">
+                    <div class="col-lg-10 col-md-9 mar30 offset-lg-2 offset-md-3">
+
+                        <div class="section-title text-center" >
                             <div class="title-bar full-width mb20">
                                 <img src="assets/images/logo/ttl-bar.png" alt="title-img">
                             </div>
-                            <h3>class schedule</h3>
-                            <p>make yourself stronger than your excuses</p>
+                            <h3>Dashboard</h3>
+                            <p>Manage N Studio Zumba</p>
                         </div>
-                    </div>
-                    <!-- /.col -->
-                </div>
-                <!-- /.row -->
-                <div class="row">
-                    <div class="col-md-12">
-                        <ul id="tabsJustified" class="nav nav-tabs schdl-tab-area">
-                            <li class="nav-item full-width"><a href="#" data-target="#level1" data-toggle="tab" class="nav-link small text-uppercase active">monday </a></li>
-                            <li class="nav-item full-width"><a href="#" data-target="#level2" data-toggle="tab" class="nav-link small text-uppercase ">tuesday</a></li>
-                            <li class="nav-item full-width"><a href="#" data-target="#level3" data-toggle="tab" class="nav-link small text-uppercase ">wednesday</a></li>
-                            <li class="nav-item full-width"><a href="#" data-target="#level4" data-toggle="tab" class="nav-link small text-uppercase ">thursday</a></li>
-                            <li class="nav-item full-width"><a href="#" data-target="#level5" data-toggle="tab" class="nav-link small text-uppercase ">friday</a></li>
-                            <li class="nav-item full-width"><a href="#" data-target="#level6" data-toggle="tab" class="nav-link small text-uppercase ">saturday</a></li>
-                            <li class="nav-item full-width"><a href="#" data-target="#level7" data-toggle="tab" class="nav-link small text-uppercase ">sunday</a></li>
-                        </ul>
-                        <div id="tabsJustifiedContent" class="tab-content">
-                            <div id="level1" class="tab-pane fade active show">
-                                <div class="schdl-box">
-                                    <h5>boxing</h5>
-                                    <p class="mb-0">06.00 am – 07.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>-----</h5>
-                                    <p class="mb-0">07.00 am – 08.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>bodybuiling</h5>
-                                    <p class="mb-0">08.00 am – 09.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>-----</h5>
-                                    <p class="mb-0">09.00 am – 10.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>crosfit</h5>
-                                    <p class="mb-0">10.00 am – 11.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>-----</h5>
-                                    <p class="mb-0">1.00 am – 12.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>fitness</h5>
-                                    <p class="mb-0">04.00 pm – 05.00pm</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>cardio</h5>
-                                    <p class="mb-0">05.00 pm – 06.00pm</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>-----</h5>
-                                    <p class="mb-0">07.00 pm – 08.00pm</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>bodybuiling</h5>
-                                    <p class="mb-0">08.00 pm – 09.00pm</p>
-                                </div>
-                            </div>
-                            <div id="level2" class="tab-pane fade">
-                                <div class="schdl-box">
-                                    <h5>boxing</h5>
-                                    <p class="mb-0">06.00 am – 07.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>-----</h5>
-                                    <p class="mb-0">07.00 am – 08.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>bodybuiling</h5>
-                                    <p class="mb-0">08.00 am – 09.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>-----</h5>
-                                    <p class="mb-0">09.00 am – 10.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>crosfit</h5>
-                                    <p class="mb-0">10.00 am – 11.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>-----</h5>
-                                    <p class="mb-0">1.00 am – 12.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>fitness</h5>
-                                    <p class="mb-0">04.00 pm – 05.00pm</p>
-                                </div>
-                            </div>
-                            <div id="level3" class="tab-pane fade">
-                                <div class="schdl-box">
-                                    <h5>boxing</h5>
-                                    <p class="mb-0">06.00 am – 07.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>-----</h5>
-                                    <p class="mb-0">09.00 am – 10.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>crosfit</h5>
-                                    <p class="mb-0">10.00 am – 11.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>-----</h5>
-                                    <p class="mb-0">1.00 am – 12.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>fitness</h5>
-                                    <p class="mb-0">04.00 pm – 05.00pm</p>
-                                </div>
-                            </div>
-                            <div id="level4" class="tab-pane fade">
-                                <div class="schdl-box">
-                                    <h5>boxing</h5>
-                                    <p class="mb-0">06.00 am – 07.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>-----</h5>
-                                    <p class="mb-0">07.00 am – 08.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>-----</h5>
-                                    <p class="mb-0">1.00 am – 12.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>fitness</h5>
-                                    <p class="mb-0">04.00 pm – 05.00pm</p>
-                                </div>
-                            </div>
-                            <div id="level5" class="tab-pane fade">
-                                <div class="schdl-box">
-                                    <h5>boxing</h5>
-                                    <p class="mb-0">06.00 am – 07.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>-----</h5>
-                                    <p class="mb-0">07.00 am – 08.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>bodybuiling</h5>
-                                    <p class="mb-0">08.00 am – 09.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>-----</h5>
-                                    <p class="mb-0">09.00 am – 10.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>crosfit</h5>
-                                    <p class="mb-0">10.00 am – 11.00am</p>
-                                </div>
-                            </div>
-                            <div id="level6" class="tab-pane fade">
-                                <div class="schdl-box">
-                                    <h5>-----</h5>
-                                    <p class="mb-0">09.00 am – 10.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>crosfit</h5>
-                                    <p class="mb-0">10.00 am – 11.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>-----</h5>
-                                    <p class="mb-0">1.00 am – 12.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>fitness</h5>
-                                    <p class="mb-0">04.00 pm – 05.00pm</p>
-                                </div>
-                            </div>
-                            <div id="level7" class="tab-pane fade">
-                                <div class="schdl-box">
-                                    <h5>bodybuiling</h5>
-                                    <p class="mb-0">08.00 am – 09.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>-----</h5>
-                                    <p class="mb-0">09.00 am – 10.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>crosfit</h5>
-                                    <p class="mb-0">10.00 am – 11.00am</p>
-                                </div>
-                                <div class="schdl-box">
-                                    <h5>-----</h5>
-                                    <p class="mb-0">1.00 am – 12.00am</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.col -->
-                </div>
-                <!-- /.row -->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="dwnload">
-                            <a href="#"><span><i class="fa fa-download" aria-hidden="true"></i></span>download our full class schedule</a>
-                        </div>
-                    </div>
-                    <!-- /.col -->
-                </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.container -->
-        </div>
-        <!--schedule-area end-->
 
-        <footer>
-            <section class="footer-area bg2 parallax overlay pt90">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-12 ">
-                            <div class="footer-logo footer-content">
-                                <img src="assets/images/logo/logo2.png" alt="footer logo">
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, ei ubique fastidii vim. Elitr feugait complectitur eu pro, sea audire ponderum eleifend cu. Vim at fuisset.</p>
-                            <div class="add-info">
-                                <p><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a>23 New Design Street, Melbourne</p>
-                                <p><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a><a href="http://sitetemplate.demo.ithemeslab.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e78582818e93809e8aa7808a868e8bc984888a">[email&#160;protected]</a></p>
-                                <p class="mb-0"><a href="#"><i class="fa fa-mobile" aria-hidden="true"></i></a>+880-123-456-7890</p>
-                            </div>
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-md-3 col-sm-12">
-                            <div class="news-info ftr-algn">
-                                <div class="footer-title footer-content">
-                                    <h3>news letter</h3>
-                                </div>
-                                <p> sign up for our mailing list to get latest updates and offers</p>
-                                <div class="subscribe">
-                                    <form action="#">
-                                        <input class="name" type="text" placeholder="Enter your email">
-                                    </form>
-                                    <a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                                </div>
-                                <div class="footer-social">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-md-3 col-sm-12">
-                            <div class="news-info ftr-algn">
-                                <div class="footer-title footer-content">
-                                    <h3>latest post</h3>
-                                </div>
-                                <div class="news-detail nws-bar">
-                                    <img src="assets/images/footer/1.jpg" alt="">
-                                    <p>Set yourself the challenge of doing the bare minimum.</p>
-                                </div>
-                                <div class="news-detail">
-                                    <img src="assets/images/footer/2.jpg" alt="">
-                                    <p>Body fat percentage: what does it really mean?</p>
-                                </div>
-                                <div class="news-detail">
-                                    <img src="assets/images/footer/3.jpg" alt="">
-                                    <p>This treatment sounded just what I was looking for.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-md-3 col-sm-12">
-                            <div class="news-info open-hrs ftr-algn">
-                                <div class="footer-title footer-content">
-                                    <h3>opening hours</h3>
-                                </div>
-                                <ul>
-                                    <li>Monday <span>07:00 - 17:00</span></li>
-                                    <li>tuesday <span>07:00 - 17:00</span></li>
-                                    <li>wednesday <span>07:00 - 17:00</span></li>
-                                    <li>thursday <span>07:00 - 17:00</span></li>
-                                    <li>friday <span>07:00 - 17:00</span></li>
-                                    <li>saturday <span>07:00 - 17:00</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- /.col -->
                     </div>
-                    <!-- /.row -->
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="instra pad60">
-                                <h4><span>instragram</span></h4>
-                            </div>
-                        </div>
-                        <!-- /.col -->
-                    </div>
-                    <!-- /.row -->
-                </div>
-                <!--/.container-->
-            </section>
-            <!--footer-gallery start-->
-            <div class="footer-gallery owl-carousel">
-                <div class="item active"> <a href="assets/images/instagram/big1.jpg">
-                        <img src="assets/images/instagram/1.jpg"  alt="Instragram img"><i class="fa fa-search"></i></a>
-                </div>
-                <div class="item "><a href="assets/images/instagram/big2.jpg">
-                        <img src="assets/images/instagram/2.jpg"  alt="Instragram img"><i class="fa fa-search"></i></a>
-                </div>
-                <div class="item"> <a href="assets/images/instagram/big3.jpg">
-                        <img src="assets/images/instagram/3.jpg"  alt="Instragram img"><i class="fa fa-search"></i></a>
-                </div>
-                <div class="item"> <a href="assets/images/instagram/big4.jpg">
-                        <img src="assets/images/instagram/4.jpg"  alt="Instragram img"><i class="fa fa-search"></i></a>
-                </div>
-                <div class="item"> <a href="assets/images/instagram/big5.jpg">
-                        <img src="assets/images/instagram/5.jpg"  alt="Instragram img"><i class="fa fa-search"></i></a>
-                </div>
-                <div class="item"> <a href="assets/images/instagram/big6.jpg">
-                        <img src="assets/images/instagram/6.jpg"  alt="Instragram img"><i class="fa fa-search"></i></a>
-                </div>
-                <div class="item"> <a href="assets/images/instagram/big4.jpg">
-                        <img src="assets/images/instagram/4.jpg"  alt="Instragram img"><i class="fa fa-search"></i></a>
-                </div>
-                <div class="item"> <a href="assets/images/instagram/big5.jpg">
-                        <img src="assets/images/instagram/5.jpg"  alt="Instragram img"><i class="fa fa-search"></i></a>
-                </div>
-                <div class="item"> <a href="assets/images/instagram/big6.jpg">
-                        <img src="assets/images/instagram/6.jpg"  alt="Instragram img"><i class="fa fa-search"></i></a>
-                </div>
             </div>
-            <!--footer-gallery end-->
-            <div class="copyright pad30">
-                <h4>Copyright © <span>iThemeslab</span> All Rights Reserved</h4>
+        </div>
+        <!--Admin dashboard-area end-->
+
+        <!--Footer start-->
+        <footer>
+            <div class="copyright pad30 footer-block" style="left: 0;bottom: 0;width: 100%;text-align: center; position: absolute;">
+                <h4>Copyright © <span>N Studio Zumba.</span> All Rights Reserved</h4>
             </div>
         </footer>
+        <!--Footer end-->
+
     </div>
 
-    <!--Search Popup-->
-    <div id="search-popup" class="search-popup">
-        <div class="close-search theme-btn"><span class="fa fa-close"></span></div>
-        <div class="popup-inner">
-
-            <div class="search-form">
-                <form method="post" action="http://sitetemplate.demo.ithemeslab.com/befit/female/index.html">
-                    <div class="form-group">
-                        <fieldset>
-                            <input type="search" class="form-control" name="search-input" value="" placeholder="Search Here" required>
-                            <input type="submit" value="Search" class="theme-btn">
-                        </fieldset>
-                    </div>
-                </form>
-
-                <br>
-                <h3>Recent Search Keywords</h3>
-            </div>
-        </div>
-    </div>
-    <!--End Search Popup-->
 
 
     <!--All Js Here-->
