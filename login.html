@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>PRICING PLAN GYM & FITNESS HTML Template</title>
+    <title>NStudioZumba</title>
     <meta name="author" content="iThemesLab">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -44,6 +44,8 @@
     <!--Modernizr Css-->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
 
+    <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+    <script src="assets/js/initfirebase.js"></script>
 
     <!--[if lt IE 9]>
         <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -54,470 +56,63 @@
 
 <body>
 
-    <div class="main-container">
-
-        <!-- /.header start -->
-        <header class="header fixed-top">
-            <nav class="navbar navbar-expand-lg navbar-dark">
-                <div class="container">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="index.html"><img src="assets/images/logo/logo.png"  alt="logo img"></a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </div>
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link " href="index.html" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  home<span class="sr-only">(current)</span>
-                                </a>
-                                <div class="dropdown-menu animation  slideUpIn">
-                                    <a class="dropdown-item" href="index.html">home1</a>
-                                    <a class="dropdown-item" href="home2.html">home2</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link " href="about-us.html" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  about<span class="sr-only">(current)</span>
-                                </a>
-                                <div class="dropdown-menu animation  slideUpIn">
-                                    <a class="dropdown-item" href="about-us.html">about us</a>
-                                    <a class="dropdown-item" href="services.html">services</a>
-                                    <a class="dropdown-item" href="service-single.html">service single</a>
-                                    <a class="dropdown-item" href="trainers.html">trainers</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown active">
-                                <a class="nav-link " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  pages<span class="sr-only">(current)</span>
-                                </a>
-                                <div class="dropdown-menu animation  slideUpIn">
-                                    <a class="dropdown-item" href="pricing-plan.html">pricing-plan</a>
-                                    <a class="dropdown-item" href="contact.html">contact</a>
-                                    <a class="dropdown-item" href="contact-2.html">contact 2</a>
-                                    <a class="dropdown-item" href="error.html">404</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  classes<span class="sr-only">(current)</span>
-                                </a>
-                                <div class="dropdown-menu animation  slideUpIn">
-                                    <a class="dropdown-item" href="single-class.html">single class</a>
-                                    <a class="dropdown-item" href="booking.html">booking</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  shop<span class="sr-only">(current)</span>
-                                </a>
-                                <div class="dropdown-menu animation  slideUpIn">
-                                    <a class="dropdown-item" href="shopping.html">shopping</a>
-                                    <a class="dropdown-item" href="single-product.html">single product</a>
-                                    <a class="dropdown-item" href="shopping-cart.html">shopping cart</a>
-                                    <a class="dropdown-item" href="checkout.html">checkout</a>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="schedule.html">schedule</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  blog<span class="sr-only">(current)</span>
-                                </a>
-                                <div class="dropdown-menu animation  slideUpIn">
-                                    <a class="dropdown-item" href="blog.html">blog</a>
-                                    <a class="dropdown-item" href="blog-2.html">blog 2</a>
-                                    <a class="dropdown-item" href="blog-left.html">blog left</a>
-                                </div>
-                            </li>
-                            <li class="nav-item d-none d-lg-inline">
-                                <div class="icon-menu">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                        <li>|</li>
-                                        <li><a href="#" class="search-btn search-box-btn"><i class="fa fa-search"></i></a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <!--header end-->
-
-        <!-- page title & breadcrumbs start -->
-        <div class="pricing-plan-bg page-head parallax overlay">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section-title text-center">
-                            <h3>pricing plan</h3>
-                        </div>
-                    </div>
-                    <!-- /.colour-service-1-->
-                    <div class="col-md-12">
-                        <ol class="breadcrumb">
-                            <li><a href="index.html">home</a></li>
-                            <li>।</li>
-                            <li>pricing plan</li>
-                        </ol>
-                    </div>
-                    <!-- /.col -->
-                </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.container -->
-        </div>
-        <!-- /.page-header -->
-        <!-- page title & breadcrumbs end -->
-
-        <!--pricing area start-->
-        <div class="pricing-area text-center pad90">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section-title text-center">
-                            <div class="title-bar full-width mb20">
-                                <img src="assets/images/logo/ttl-bar.png"  alt="title-img">
-                            </div>
-                            <h3>pricing package</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="price-box">
-                            <div class="price-empty">
-                            </div>
-                            <div class="price-quantity">
-                                <div class="qnty-box">
-                                    <div class="box-element">
-                                        <h5>£85.00</h5>
-                                        <p>Quarterly</p>
-                                    </div>
-                                </div>
-                                <div class="price-dtl">
-                                    <ul>
-                                        <li class="first-child">3 Days of the week</li>
-                                        <li>professional trainer</li>
-                                        <li>Bodybuilding</li>
-                                        <li>Free Hand</li>
-                                        <li>Fitness & Boxing</li>
-                                    </ul>
-                                    <div class="price-btn bttn">
-                                        <button type="submit" class="btn btn-primary">Buy now</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-md-4">
-                        <div class="price-box active">
-                            <div class="price-empty">
-                            </div>
-                            <div class="price-quantity">
-                                <div class="qnty-box">
-                                    <div class="box-element">
-                                        <h5>£130.00</h5>
-                                        <p>half yearly</p>
-                                    </div>
-                                </div>
-                                <div class="price-dtl">
-                                    <ul>
-                                        <li class="first-child">3 Days of the week</li>
-                                        <li>professional trainer</li>
-                                        <li>Bodybuilding</li>
-                                        <li>Free Hand</li>
-                                        <li>Fitness & Boxing</li>
-                                    </ul>
-                                    <div class="price-btn bttn">
-                                        <button type="submit" class="btn btn-primary">Buy now</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-md-4">
-                        <div class="price-box">
-                            <div class="price-empty">
-                            </div>
-                            <div class="price-quantity">
-                                <div class="qnty-box">
-                                    <div class="box-element">
-                                        <h5>£85.00</h5>
-                                        <p>£210.00</p>
-                                    </div>
-                                </div>
-                                <div class="price-dtl">
-                                    <ul>
-                                        <li class="first-child">3 Days of the week</li>
-                                        <li>professional trainer</li>
-                                        <li>Bodybuilding</li>
-                                        <li>Free Hand</li>
-                                        <li>Fitness & Boxing</li>
-                                    </ul>
-                                    <div class="price-btn bttn">
-                                        <button type="submit" class="btn btn-primary">Buy now</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.col -->
-                </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.container -->
-        </div>
-        <!--pricing area end-->
-
-        <!--pricing area start-->
-        <div class="pricing-area bg1 overlay text-center pad90">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="price-box">
-                            <div class="price-empty">
-                            </div>
-                            <div class="price-quantity">
-                                <div class="qnty-box">
-                                    <div class="box-element">
-                                        <h5>£85.00</h5>
-                                        <p>Quarterly</p>
-                                    </div>
-                                </div>
-                                <div class="price-dtl">
-                                    <ul>
-                                        <li class="first-child">3 Days of the week</li>
-                                        <li>professional trainer</li>
-                                        <li>Bodybuilding</li>
-                                        <li>Free Hand</li>
-                                        <li>Fitness & Boxing</li>
-                                    </ul>
-                                    <div class="price-btn bttn">
-                                        <button type="submit" class="btn btn-primary">Buy now</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-md-4">
-                        <div class="price-box active">
-                            <div class="price-empty">
-                            </div>
-                            <div class="price-quantity">
-                                <div class="qnty-box">
-                                    <div class="box-element">
-                                        <h5>£130.00</h5>
-                                        <p>half yearly</p>
-                                    </div>
-                                </div>
-                                <div class="price-dtl">
-                                    <ul>
-                                        <li class="first-child">3 Days of the week</li>
-                                        <li>professional trainer</li>
-                                        <li>Bodybuilding</li>
-                                        <li>Free Hand</li>
-                                        <li>Fitness & Boxing</li>
-                                    </ul>
-                                    <div class="price-btn bttn">
-                                        <button type="submit" class="btn btn-primary">Buy now</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-md-4">
-                        <div class="price-box">
-                            <div class="price-empty">
-                            </div>
-                            <div class="price-quantity">
-                                <div class="qnty-box">
-                                    <div class="box-element">
-                                        <h5>£85.00</h5>
-                                        <p>£210.00</p>
-                                    </div>
-                                </div>
-                                <div class="price-dtl">
-                                    <ul>
-                                        <li class="first-child">3 Days of the week</li>
-                                        <li>professional trainer</li>
-                                        <li>Bodybuilding</li>
-                                        <li>Free Hand</li>
-                                        <li>Fitness & Boxing</li>
-                                    </ul>
-                                    <div class="price-btn bttn">
-                                        <button type="submit" class="btn btn-primary">Buy now</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.col -->
-                </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.container -->
-        </div>
-        <!--pricing area end-->
-
-
-        <!--call to action-1 start-->
-        <div class="call-to-action1 tab-action plan-box">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7">
-                        <div class="cta-box pad90">
-                            <h4 class="mb20">Joined Today Get The Best </h4>
-                            <h5 class="mb30">3 Time Mr. Olympia Champion</h5>
-                            <p class="mb30">Decore quidam bonorum vis eu, omnium instructior disputationi pro ei. An decore omittam duo, sed noluisse petentium instructior ad, pro no vidit error maiestatis. Ut qui errem quidam feugiat, ea eum vero mutat aliquip, ne erat postulant argumentum vim. Aliquip </p>
-                            <div class="bttn">
-                                <button type="submit" class="btn active btn-primary">sign up</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-lg-5">
-                        <div class="cta-img float-left">
-                            <img src="assets/images/call-to-action/girl3.png"  alt="girl-img">
-                        </div>
-                    </div>
-                    <!-- /.col -->
-                </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.container -->
-        </div>
-        <!--call to action-1 end-->
-
-
         <footer>
-            <section class="footer-area bg3 parallax overlay pt90">
+            <section class="footer-area bg3 parallax overlay pt90" style="min-height: 580px">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-12 ">
-                            <div class="footer-logo footer-content">
-                                <img src="assets/images/logo/logo2.png"  alt="footer logo">
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, ei ubique fastidii vim. Elitr feugait complectitur eu pro, sea audire ponderum eleifend cu. Vim at fuisset.</p>
-                            <div class="add-info">
-                                <p><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a>23 New Design Street, Melbourne</p>
-                                <p><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a><a href="http://sitetemplate.demo.ithemeslab.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c6a4a3a0afb2a1bfab86a1aba7afaae8a5a9ab">[email&#160;protected]</a></p>
-                                <p class="mb-0"><a href="#"><i class="fa fa-mobile" aria-hidden="true"></i></a>+880-123-456-7890</p>
-                            </div>
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-md-3 col-sm-12">
-                            <div class="news-info ftr-algn">
-                                <div class="footer-title footer-content">
-                                    <h3>news letter</h3>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6 col-md-10">
+                            <div class="card shadow" style="border-radius: 10px;border-color:rgba(252, 50, 138, 0.8)">
+                                <div class="card-body" style="background-color: rgba(0,0,0,0.66); position: absolute; width: 100%;padding: 0;border-radius: 10px">
+                                    <nav class="navbar navbar-expand-lg navbar-dark">
+                                        <div class="container-fluid justify-content-center">
+                                            <div>
+                                                <a class="navbar-brand" href="/index.html"><img src="assets/images/logo_nav.png"  alt="N_Studio_Zumba_Logo" style="width: 100px; height: 100px;"></a>
+                                            </div>
+                                        </div>
+                                    </nav>
                                 </div>
-                                <p> sign up for our mailing list to get latest updates and offers</p>
-                                <div class="subscribe">
-                                    <form action="#">
-                                        <input class="name" type="text" placeholder="Enter your email">
+                                <div class="card-body" style="margin-top: 130px;">
+                                    <form method="POST" action="#" aria-label="#" style="background-color: transparent;">
+                                        <div class="form-group row">
+                                            <label  class="col-sm-4 col-form-label text-md-right text-light" style="font-size: large">Email</label>
+
+                                            <div class="col-md-6">
+                                                <input id="email" type="text" class="form-control text-light" name="username" value="" required autofocus style="background-color: transparent">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="password" class="col-md-4 col-form-label text-md-right text-light" style="font-size: large">Password</label>
+
+                                            <div class="col-md-6">
+                                                <input id="password" type="password" class="form-control text-light" name="password" required style="background-color: transparent">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <div class="col-sm-4"></div>
+                                            <div id="error" class="col-md-6 text-danger text-left"></div>
+                                        </div>
+
+
+                                        <div class="form-group row text-right">
+                                            <div class="col-md-10">
+                                                <button type="button" onclick="signin()" class="btn active btn-primary align-content-center">
+                                                    Login
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <hr style="border-color: #343a40;opacity: 0.4;">
+
                                     </form>
-                                    <a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                                </div>
-                                <div class="footer-social">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                    </ul>
                                 </div>
                             </div>
                         </div>
-                        <!-- /.col -->
-                        <div class="col-md-3 col-sm-12">
-                            <div class="news-info ftr-algn">
-                                <div class="footer-title footer-content">
-                                    <h3>latest post</h3>
-                                </div>
-                                <div class="news-detail nws-bar">
-                                    <img src="assets/images/footer/1.jpg"  alt="">
-                                    <p>Set yourself the challenge of doing the bare minimum.</p>
-                                </div>
-                                <div class="news-detail">
-                                    <img src="assets/images/footer/2.jpg"  alt="">
-                                    <p>Body fat percentage: what does it really mean?</p>
-                                </div>
-                                <div class="news-detail">
-                                    <img src="assets/images/footer/3.jpg"  alt="">
-                                    <p>This treatment sounded just what I was looking for.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-md-3 col-sm-12">
-                            <div class="news-info open-hrs ftr-algn">
-                                <div class="footer-title footer-content">
-                                    <h3>opening hours</h3>
-                                </div>
-                                <ul>
-                                    <li>Monday <span>07:00 - 17:00</span></li>
-                                    <li>tuesday <span>07:00 - 17:00</span></li>
-                                    <li>wednesday <span>07:00 - 17:00</span></li>
-                                    <li>thursday <span>07:00 - 17:00</span></li>
-                                    <li>friday <span>07:00 - 17:00</span></li>
-                                    <li>saturday <span>07:00 - 17:00</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- /.col -->
                     </div>
-                    <!-- /.row -->
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="instra pad60">
-                                <h4><span>instragram</span></h4>
-                            </div>
-                        </div>
-                        <!-- /.col -->
-                    </div>
-                    <!-- /.row -->
                 </div>
                 <!--/.container-->
             </section>
-            <!--footer-gallery start-->
-            <div class="footer-gallery owl-carousel">
-                <div class="item active"> <a href="assets/images/instagram/big1.jpg"   >
-                    <img src="assets/images/instagram/1.jpg" alt="Instragram img"><i class="fa fa-search"></i></a>
-                </div>
-                <div class="item "><a href="assets/images/instagram/big2.jpg"   >
-                    <img src="assets/images/instagram/2.jpg"  alt="Instragram img"><i class="fa fa-search"></i></a>
-                </div>
-                <div class="item"> <a href="assets/images/instagram/big3.jpg"   >
-                    <img src="assets/images/instagram/3.jpg"  alt="Instragram img"><i class="fa fa-search"></i></a>
-                </div>
-                <div class="item"> <a href="assets/images/instagram/big4.jpg"   >
-                    <img src="assets/images/instagram/4.jpg" alt="Instragram img"><i class="fa fa-search"></i></a>
-                </div>
-                <div class="item"> <a href="assets/images/instagram/big5.jpg"   >
-                    <img src="assets/images/instagram/5.jpg"  alt="Instragram img"><i class="fa fa-search"></i></a>
-                </div>
-                <div class="item"> <a href="assets/images/instagram/big6.jpg"   >
-                    <img src="assets/images/instagram/6.jpg"  alt="Instragram img"><i class="fa fa-search"></i></a>
-                </div>
-                <div class="item"> <a href="assets/images/instagram/big4.jpg"   >
-                    <img src="assets/images/instagram/4.jpg" alt="Instragram img"><i class="fa fa-search"></i></a>
-                </div>
-                <div class="item"> <a href="assets/images/instagram/big5.jpg"   >
-                    <img src="assets/images/instagram/5.jpg"  alt="Instragram img"><i class="fa fa-search"></i></a>
-                </div>
-                <div class="item"> <a href="assets/images/instagram/big6.jpg"   >
-                    <img src="assets/images/instagram/6.jpg"  alt="Instragram img"><i class="fa fa-search"></i></a>
-                </div>
-            </div>
-            <!--footer-gallery end-->
+
             <div class="copyright pad30">
                 <h4>Copyright © <span>iThemeslab</span> All Rights Reserved</h4>
             </div>
