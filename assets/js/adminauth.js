@@ -7,3 +7,4 @@ firebase.auth().onAuthStateChanged(function(user) {
         location.replace(baseUrl+'/login.html')
     }
 });
+// window.alert('got')
