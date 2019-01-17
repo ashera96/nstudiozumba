@@ -1,0 +1,80 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 11/12/2017 14:53
+  	*/
+
+	@font-face {
+	    font-family: "Flaticon";
+	    src: url("../../fonts/font/flaticon.eot");
+	    src: url("../../fonts/font/flaticond41d.eot?#iefix") format("embedded-opentype"),
+	    url("../../fonts/font/flaticon.woff") format("woff"),
+	    url("../../fonts/font/flaticon.ttf") format("truetype"),
+	    url("../../fonts/font/flaticon.svg#Flaticon") format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@media screen and (-webkit-min-device-pixel-ratio:0) {
+	    @font-face {
+	        font-family: "Flaticon";
+	        src: url("../../fonts/font/flaticon.svg#Flaticon") format("svg");
+	    }
+	}
+
+	[class^="flaticon-"]:before,
+	[class*=" flaticon-"]:before,
+	[class^="flaticon-"]:after,
+	[class*=" flaticon-"]:after {
+	    font-family: Flaticon;
+	    font-size: 20px;
+	    font-style: normal;
+	    margin-left: 20px;
+	}
+
+	.flaticon-yoga:before {
+	    content: "\f100";
+	}
+
+	.flaticon-bosu-ball:before {
+	    content: "\f101";
+	}
+
+	.flaticon-heart:before {
+	    content: "\f102";
+	}
+
+	.flaticon-brawn:before {
+	    content: "\f103";
+	}
+
+	.flaticon-dumbbell:before {
+	    content: "\f104";
+	}
+
+	.flaticon-transport:before {
+	    content: "\f105";
+	}
+
+	.flaticon-gym:before {
+	    content: "\f106";
+	}
+
+	.flaticon-weightlifting:before {
+	    content: "\f107";
+	}
+
+	.flaticon-exercise:before {
+	    content: "\f108";
+	}
+
+	.flaticon-interface:before {
+	    content: "\f109";
+	}
+
+	.flaticon-magnifying-glass:before {
+	    content: "\f10a";
+	}
+
+	.flaticon-silhouette:before {
+	    content: "\f10b";
+	}
