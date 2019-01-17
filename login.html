@@ -51,12 +51,22 @@
         <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script>
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                var getUrl = window.location;
+                var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+                location.replace(baseUrl+'/admin_dashboard.html')
+            } else {
+                document.getElementById('body').style.display="block"
+            }
+        });
+    </script>
 
 </head>
 
-<body>
-
-        <footer>
+<body id="body" style="display: none">
+        <footer >
             <section class="footer-area bg3 parallax overlay pt90" style="min-height: 580px">
                 <div class="container">
                     <div class="row justify-content-center">

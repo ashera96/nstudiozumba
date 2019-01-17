@@ -19,3 +19,7 @@ function signin() {
         document.getElementById('error').innerHTML="Invalid Credentials..!";
     });
 }
+
+function logout(){
+    firebase.auth().signOut();
+}
