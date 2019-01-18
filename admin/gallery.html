@@ -56,11 +56,9 @@
     <![endif]-->
     <script src="../assets/js/adminauth.js"></script>
     <style>
-        .inputcls {
-            position: relative;
-            overflow: hidden;
-        }
         .inputcls{
+            /*position: relative;*/
+            overflow: hidden;
             position: absolute;
             top: 0;
             right: 0;
@@ -71,9 +69,10 @@
             filter: alpha(opacity=0);
             opacity: 0;
             outline: none;
-            background: white;
+            background: black;
             cursor: inherit;
             display: block;
+            /*z-index: -10;*/
         }
     </style>
 </head>
@@ -143,7 +142,7 @@
                 <div class="row">
 
                     <!--Sidebar-area start-->
-                    <div class="col-lg-2 col-md-3 sideFix " style="position: fixed;">
+                    <div class="col-lg-2 col-md-3 sideFix " style="position: fixed; z-index: 20">
                         <div class="list-group shadow-sm">
                             <a href="../admin/dashboard.html" class="list-group-item side-bar"><i class="fa fa-cog fa-lg mr-1"></i> Dashboard</a>
                             <a href="../admin/gallery.html" class="list-group-item side-bar active"><i class="fa fa-image fa-lg mr-1"></i> Gallery</a>
