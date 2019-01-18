@@ -47,6 +47,8 @@ function remove(name,id){
 }
 
 function file() {
+    $('#loading').modal('show');
+    document.getElementById('btnsubmit').style.display="none";
     const files = document.querySelector('[type=file]').files;
     var file=files[0];
     var id=0;
@@ -67,11 +69,13 @@ function file() {
             alert('Upload Failed..!')
         }
     });
+
     //Upload file to cloud storage
     var storageRef = firebase.storage().ref();
     var galleryImagesRef = storageRef.child('gallery/'+file.name);
     galleryImagesRef.put(file).then(function(snapshot) {
-        alert('Upload Succeeded..!');
+        $('#loading').modal('hide');
         location.reload();
+        alert('Upload Succeeded..!');
     });
 }
