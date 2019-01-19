@@ -43,7 +43,6 @@ function remove(name,id){
     });
     firebase.database().ref('gallery/'+id).remove();
     alert("Delete Succeeded")
-
 }
 
 function file() {

@@ -58,7 +58,94 @@
 </head>
 
 <body id="body" style="display: none">
-
+<!--Add item form modal start-->
+    <div class="modal fade" id="additems" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <div class="col-md-12">
+                        <div class="section-title text-center">
+                            <img src="../assets/images/logo/ttl-bar.png" alt="title-img">
+                            <h3>Add Items</h3>
+                            <p>Please fill the form and hit submit button</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="contact-form mt20">
+                            <div class="appointment-schedule">
+                                <form action="#" class="appointment-form">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input id="name" type="text" placeholder="Package Name" class="form-control ">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input class="form-control" name="service" id="service" cols="10" rows="2" placeholder="Service"></input>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input id="amount" type="number" placeholder="Amount" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <select id="regfee" class="form-control" name="regfee">
+                                                <option name="regfee" value=500>RS. 500.00</option>
+                                                <option name="regfee" value=0>Rs. 0.00</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="bttn full-width">
+                                                <button type="button" class="btn active full-width btn-primary" onclick="additem()">submit</button>
+                                            </div>
+                                        </div>
+                                        <!-- /.col -->
+                                    </div>
+                                    <!-- /.row -->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--Add item form modal end-->
+<script>
+    function additem(){
+        var name=$('#name').val();
+        var service=$('#service').val();
+        var amount=$('#amount').val();
+        var regfee=$('#regfee').val();
+        //get last id to make new id
+        var data = firebase.database().ref('packages');
+        data.once('value', function(snapshot) {
+            var id=snapshot.numChildren();
+            var data = firebase.database().ref('packages/'+id);
+            data.set({
+                id:id,
+                name: 'Test Name',
+                service: 'Test Service',
+                amount: 2500,
+                regfee: 500,
+            }, function(error) {
+                if (error) {
+                    alert('Upload Failed..!')
+                }else{
+                    alert('Add Suceeded')
+                }
+            });
+        })
+        //save meta data to database
+    }
+</script>
     <div class="main-container">
 
         <!-- /.header start -->
@@ -141,16 +228,61 @@
                             </div>
                             <h3>Dashboard</h3>
                             <p>Manage N Studio Zumba</p>
+                            <div class="cart-main-area  pad90">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-12 col-sm-10 col-xs-10">
+                                            <form action="#">
+                                                <div class="table-content table-responsive">
+                                                    <table>
+                                                        <thead>
+                                                        <tr>
+                                                            <th class="product-thumbnail">Image</th>
+                                                            <th class="product-name">Name</th>
+                                                            <th class="product-name">Name</th>
+                                                            <th class="product-name">Name</th>
+                                                            <th class="product-name">Name</th>
+                                                            <th class="product-remove">Remove</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <!--Call by a js function in gallery.js-->
+                                                        <tbody>
+                                                        <tr>
+                                                            <td class="product-thumbnail"><br>
+                                                                <button type="button" class="btn active btn-primary" data-toggle="modal" data-target="#additems">Add New Item</button>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                        <tbody id="tbody"></tbody>
+                                                    </table>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
             </div>
         </div>
+            <script>
+                document.getElementById('tbody').innerHTML='<tr>\n' +
+                    '                                                                <td class="product-thumbnail">\n' +
+                    '                                                                    <a href="#"><img src="assets/images/price/thumb/3.jpg"  alt="Cart img" /></a>\n' +
+                    '                                                                </td>\n' +
+                    '                                                                <td class="product-name"><a href="#">icasin energy</a></td>\n' +
+                    '                                                                <td class="product-price"><span class="amount">$40.00</span></td>\n' +
+                    '                                                                <td class="product-quantity"><input type="number" value="1" /></td>\n' +
+                    '                                                                <td class="product-subtotal">$40.00</td>\n' +
+                    '                                                                <td class="product-remove"><a href="#"><i class="fa fa-times"></i></a></td>\n' +
+                    '                                                            </tr>'
+            </script>
         <!--Admin dashboard-area end-->
 
         <!--Footer start-->
         <footer>
-            <div class="copyright pad30 footer-block" style="left: 0;bottom: 0;width: 100%;text-align: center; position: absolute;">
+            <div class="copyright pad30 footer-block" style="left: 0;bottom: 0;width: 100%;text-align: center; position: relative;">
                 <h4>Copyright © <span>N Studio Zumba.</span> All Rights Reserved</h4>
             </div>
         </footer>
