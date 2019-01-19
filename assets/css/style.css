@@ -2599,3 +2599,7 @@ shop end-------------*/
 .ml200{
   margin-left: 200px;
 }
+
+.hide{
+  display: none;
+}
