@@ -22,7 +22,7 @@
 
     <!--Bootstrap Css-->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-    <!--<link rel="stylesheet" href="assets/css/app.css">-->
+    <link rel="stylesheet" href="assets/css/app.css">
     <!--revolution slider-->
     <link rel="stylesheet" href="assets/css/vendor/rev_slider/settings.css">
     <link rel="stylesheet" href="assets/css/vendor/rev_slider/navigation.css">
@@ -45,12 +45,15 @@
     <!--Modernizr Css-->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
 
+    <!--firebase scripts start-->
+    <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+    <script src="assets/js/initfirebase.js"></script>
+    <!--firebase scripts end-->
 
     <!--[if lt IE 9]>
     <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 
 </head>
 
@@ -153,24 +156,8 @@
                 </div>
                 <!-- /.row -->
 
-
-
-
-                <div class="gallery">
-
-                    <!--<?php-->
-            <!--$c=count(scandir('uploads/')) - 2;-->
-            <!--// echo "<h1>value is $c</h1>";-->
-
-                    <!--for ($x = 1; $x <= $c; $x++) {-->
-                    <!--echo ' <a href="/uploads/'.$x.'.png">';-->
-                    <!--echo '<img src="/uploads/'.$x.'.png"/>';-->
-
-                    <!--}-->
-
-                    <!--?>-->
-
-
+                <div id="gallery" class="gallery">
+                   <img src="assets/images/logo/loading.gif">
                 </div>
 
 
@@ -235,7 +222,26 @@
             </div>
         </footer>
     </div>
+    
+    <script>
+        var data = firebase.database().ref('gallery');
+        var imgstorage = firebase.storage();
+        var pathReference;
+        data.on('value', function(snapshot) {
+            document.getElementById('gallery').innerHTML="";
+            snapshot.val().forEach(function (a) {
+                pathReference = imgstorage.ref('gallery/'+a.name);
+                pathReference.getDownloadURL().then(function(url) {
+                    document.getElementById('gallery').innerHTML+='<img src='+url+'/>';
+                    // document.getElementById('img').src=url;
+                }).catch(function(error) {
+                    // alert("something went wrong")
+                });
+                // alert(1)
 
+            })
+        });
+    </script>
 
     <!--All Js Here-->
     <!-- jquery latest version -->

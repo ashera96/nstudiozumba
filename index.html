@@ -44,6 +44,7 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
     <!--Modernizr Css-->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+
     <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
     <script src="assets/js/initfirebase.js"></script>
 
@@ -335,27 +336,27 @@
                             <h3>Notifications</h3>
                             <div id="posts" style="color: gray ;padding: 15px;background-clip: padding-box;font-size: medium">
                                 <!--@foreach($posts as $post)-->
-                                <!--<div>-->
-                                    <!--<div class="card mt15 shadow-lg">-->
-                                        <!--<h4 class="card-header mt20" style="color: #fc328a">{{$post->title}}</h4>-->
-                                        <!--<div class="card-body">-->
-                                            <!--<div class="card-text ml-4 mr-4" style="color: #343a40">-->
-                                                <!--<div class="row mb-4">-->
-                                                    <!--{{$post->post_body}}-->
-                                                <!--</div>-->
+                                <div>
+                                    <div class="card mt15 shadow-lg">
+                                        <h4 class="card-header mt20" style="color: #fc328a">title</h4>
+                                        <div class="card-body">
+                                            <div class="card-text ml-4 mr-4" style="color: #343a40">
+                                                <div class="row mb-4">
+                                                    body
+                                                </div>
                                                 <!--@if($post->image)-->
-                                                <!--<img src="{{asset('images/posts/' . $post->image)}}" style="max-height: 100%;max-width: 100%;" />-->
-                                                <!--<br><br>-->
+                                                <img src="assets/images/logo/loading.gif" style="max-height: 100%;max-width: 100%;" />
+                                                <br><br>
                                                 <!--@endif-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                        <!--<div class="card-footer text-muted">-->
-                                            <!--Posted at : {{$post->updated_at}}-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                    <!--<br>-->
-                                <!--</div>-->
-                                <!--<br>-->
+                                            </div>
+                                        </div>
+                                        <div class="card-footer text-muted">
+                                            date and time
+                                        </div>
+                                    </div>
+                                    <br>
+                                </div>
+                                <br>
                                 <!--@endforeach-->
                             </div>
                         </div>
