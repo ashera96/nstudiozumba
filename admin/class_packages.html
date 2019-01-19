@@ -64,11 +64,7 @@
             <div class="modal-content">
                 <div class="modal-body text-center">
                     <div class="col-md-12">
-                        <div class="section-title text-center">
-                            <img src="../assets/images/logo/ttl-bar.png" alt="title-img">
-                            <h3>Add Items</h3>
-                            <p>Please fill the form and hit submit button</p>
-                        </div>
+                        <div id="header" class="section-title text-center"></div>
                     </div>
                     <div class="col-md-12">
                         <div class="contact-form mt20">
@@ -102,7 +98,7 @@
                                     <br>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <div class="bttn full-width">
+                                            <div id="button" class="bttn full-width">
                                                 <button type="button" class="btn active full-width btn-primary" onclick="additem()">submit</button>
                                             </div>
                                         </div>
@@ -118,33 +114,10 @@
         </div>
     </div>
 <!--Add item form modal end-->
+
+
 <script>
-    function additem(){
-        var name=$('#name').val();
-        var service=$('#service').val();
-        var amount=$('#amount').val();
-        var regfee=$('#regfee').val();
-        //get last id to make new id
-        var data = firebase.database().ref('packages');
-        data.once('value', function(snapshot) {
-            var id=snapshot.numChildren();
-            var data = firebase.database().ref('packages/'+id);
-            data.set({
-                id:id,
-                name: 'Test Name',
-                service: 'Test Service',
-                amount: 2500,
-                regfee: 500,
-            }, function(error) {
-                if (error) {
-                    alert('Upload Failed..!')
-                }else{
-                    alert('Add Suceeded')
-                }
-            });
-        })
-        //save meta data to database
-    }
+
 </script>
     <div class="main-container">
 
@@ -227,29 +200,29 @@
                                 <img src="../assets/images/logo/ttl-bar.png" alt="title-img">
                             </div>
                             <h3>Dashboard</h3>
-                            <p>Manage N Studio Zumba</p>
+                            <p style="margin-bottom: -50px">Manage N Studio Zumba</p>
                             <div class="cart-main-area  pad90">
                                 <div class="container">
                                     <div class="row justify-content-center">
                                         <div class="col-md-12 col-sm-10 col-xs-10">
                                             <form action="#">
                                                 <div class="table-content table-responsive">
-                                                    <table>
+                                                    <table class="table-striped">
                                                         <thead>
                                                         <tr>
-                                                            <th class="product-thumbnail">Image</th>
-                                                            <th class="product-name">Name</th>
-                                                            <th class="product-name">Name</th>
-                                                            <th class="product-name">Name</th>
-                                                            <th class="product-name">Name</th>
+                                                            <th class="product-name">Package</th>
+                                                            <th class="product-name">Service</th>
+                                                            <th class="product-name">Amount</th>
+                                                            <th class="product-name">Registration fee</th>
+                                                            <th class="product-remove">Update</th>
                                                             <th class="product-remove">Remove</th>
                                                         </tr>
                                                         </thead>
                                                         <!--Call by a js function in gallery.js-->
                                                         <tbody>
-                                                        <tr>
-                                                            <td class="product-thumbnail"><br>
-                                                                <button type="button" class="btn active btn-primary" data-toggle="modal" data-target="#additems">Add New Item</button>
+                                                        <tr class="text-left"  style="background-color: transparent">
+                                                            <td class="product-thumbnail" ><br>
+                                                                <button type="button" class="btn active btn-primary" onclick="additembutton()" style="margin-top: -22px">Add New Item</button>
                                                             </td>
                                                         </tr>
                                                         </tbody>
@@ -266,18 +239,8 @@
                     </div>
             </div>
         </div>
-            <script>
-                document.getElementById('tbody').innerHTML='<tr>\n' +
-                    '                                                                <td class="product-thumbnail">\n' +
-                    '                                                                    <a href="#"><img src="assets/images/price/thumb/3.jpg"  alt="Cart img" /></a>\n' +
-                    '                                                                </td>\n' +
-                    '                                                                <td class="product-name"><a href="#">icasin energy</a></td>\n' +
-                    '                                                                <td class="product-price"><span class="amount">$40.00</span></td>\n' +
-                    '                                                                <td class="product-quantity"><input type="number" value="1" /></td>\n' +
-                    '                                                                <td class="product-subtotal">$40.00</td>\n' +
-                    '                                                                <td class="product-remove"><a href="#"><i class="fa fa-times"></i></a></td>\n' +
-                    '                                                            </tr>'
-            </script>
+        </div>
+
         <!--Admin dashboard-area end-->
 
         <!--Footer start-->
@@ -335,6 +298,7 @@
 
     <!-- template main js file -->
     <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/package.js"></script>
 </body>
 
 
