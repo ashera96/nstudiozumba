@@ -365,7 +365,46 @@
             </div>
         </div>
         <!--Notifications area end-->
+<script>
+    var data = firebase.database().ref('notifications');
+    var imgstorage = firebase.storage();
+    var pathReference;
+    data.on('value', function(snapshot) {
+        document.getElementById('posts').innerHTML='';
+        snapshot.val().forEach(function (a) {
+            document.getElementById('posts').innerHTML+='<div>\n' +
+                '                                    <div class="card mt15 shadow-lg">\n' +
+                '                                        <h4 class="card-header mt20" style="color: #fc328a">'+a.title+'</h4>\n' +
+                '                                        <div class="card-body">\n' +
+                '                                            <div class="card-text ml-4 mr-4" style="color: #343a40">\n' +
+                '                                                <div class="row mb-4">\n'+a.message+'</div>\n' +
+                '                                                <!--@if($post->image)-->\n' +
+                '                                                <img id='+a.image+' src="" style="max-height: 100%;max-width: 100%;display: none" />\n' +
+                '                                                <br><br>\n' +
+                '                                                <!--@endif-->\n' +
+                '                                            </div>\n' +
+                '                                        </div>\n' +
+                '                                        <div class="card-footer text-muted">\n'+a.createdat+
+                '                                        </div>\n' +
+                '                                    </div>\n' +
+                '                                    <br>\n' +
+                '                                </div>\n' +
+                '                                <br>';
+            if(a.image!="none"){
+                pathReference = imgstorage.ref('notifications/'+a.image);
+                pathReference.getDownloadURL().then(function(url) {
+                    document.getElementById(a.image).style.display="block";
+                    document.getElementById(a.image).src=url;
+                    // document.getElementById('img').src=url;
+                }).catch(function(error) {
+                    // alert("something went wrong")
+                });
+            }
 
+            // alert(1)
+        })
+    });
+</script>
         <footer>
             <section class="footer-area bg3 parallax overlay pt90">
                 <div class="container">
