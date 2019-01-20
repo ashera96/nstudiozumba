@@ -335,29 +335,18 @@
                             </div>
                             <h3>Notifications</h3>
                             <div id="posts" style="color: gray ;padding: 15px;background-clip: padding-box;font-size: medium">
-                                <!--@foreach($posts as $post)-->
                                 <div>
                                     <div class="card mt15 shadow-lg">
-                                        <h4 class="card-header mt20" style="color: #fc328a">title</h4>
                                         <div class="card-body">
                                             <div class="card-text ml-4 mr-4" style="color: #343a40">
-                                                <div class="row mb-4">
-                                                    body
-                                                </div>
-                                                <!--@if($post->image)-->
-                                                <img src="assets/images/logo/loading.gif" style="max-height: 100%;max-width: 100%;" />
-                                                <br><br>
-                                                <!--@endif-->
+                                                <img src="assets/images/logo/loading.gif" style="max-height: 200px;max-width: 200px;" />
                                             </div>
                                         </div>
-                                        <div class="card-footer text-muted">
-                                            date and time
-                                        </div>
+                                        <div class="card-footer text-muted"></div>
                                     </div>
                                     <br>
                                 </div>
                                 <br>
-                                <!--@endforeach-->
                             </div>
                         </div>
                     </div>
@@ -376,8 +365,8 @@
                 '                                    <div class="card mt15 shadow-lg">\n' +
                 '                                        <h4 class="card-header mt20" style="color: #fc328a">'+a.title+'</h4>\n' +
                 '                                        <div class="card-body">\n' +
-                '                                            <div class="card-text ml-4 mr-4" style="color: #343a40">\n' +
-                '                                                <div class="row mb-4">\n'+a.message+'</div>\n' +
+                '                                            <div class="card-text ml-4 mr-4 " style="color: #343a40;">\n' +
+                '                                                <div class="row mb-4 justify-content-center">\n'+a.message+'</div>\n' +
                 '                                                <!--@if($post->image)-->\n' +
                 '                                                <img id='+a.image+' src="" style="max-height: 100%;max-width: 100%;display: none" />\n' +
                 '                                                <br><br>\n' +
