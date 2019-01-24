@@ -54,6 +54,17 @@
         <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style>
+        @media (max-width: 768px) {
+            #slider {
+                display: none;
+            }
+        }
+        @media (min-width: 769px) {
+            #featured{
+                margin-top: -100px;
+            }
+        }
+
         .pagination {
             display: inline-block;
         }
@@ -133,7 +144,7 @@
 
 
         <!-- Slider Area Start Here-->
-        <div class="slider-area1">
+        <div id="slider" class="slider-area1">
             <div id="rev_slider_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="photography1" style="background-color:transparent;padding:0px;">
                 <div id="rev_slider_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.0.7">
                     <ul>
@@ -194,7 +205,7 @@
 
 
         <!--features-area start-->
-        <div class="features-area pb30" style="margin-top: -100px;">
+        <div id="featured" class="features-area pb30" >
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
