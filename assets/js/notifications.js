@@ -9,7 +9,7 @@ data.on('value', function(snapshot) {
                 '  <td class="product-name"><a href="#">'+a.title+'</a></td>\n' +
                 '  <td class="product-name"><a href="#">'+a.message+'</a></td>\n' +
                 '  <td class="product-name"><a href="#">'+a.image+'</a></td>\n' +
-                '  <td class="product-remove"><a><i class="fa fa-times" onclick="edit(\''+a.id+'\',\''+a.title+'\',\''+a.message+'\',\''+a.image+'\')"></i></a></td>\n' +
+                '  <td class="product-remove"><a><i class="fa fa-pencil" onclick="edit(\''+a.id+'\',\''+a.title+'\',\''+a.message+'\',\''+a.image+'\')"></i></a></td>\n' +
                 '  <td class="product-remove"><a><i class="fa fa-times" onclick="remove(\''+a.image+'\',\''+a.id+'\')"></i></a></td>\n' +
                 '  </tr>'
     })
