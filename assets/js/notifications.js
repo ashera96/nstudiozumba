@@ -1,5 +1,5 @@
 
-var data = firebase.database().ref('notifications').orderByKey().endAt("3").limitToLast(4);
+var data = firebase.database().ref('notifications');
 
 data.on('value', function(snapshot) {
     document.getElementById('tbody').innerHTML ="";
