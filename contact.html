@@ -161,7 +161,7 @@
                     <div class="col-md-8">
                         <div class="contact-form mt20">
                             <div class="appointment-schedule">
-                                <form action="#" class="appointment-form">
+                                <form class="appointment-form" id="contact-form">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
@@ -310,6 +310,14 @@
             </div>
         </footer>
     </div>
+
+    <!--Email sending through js start-->
+    <script>
+        $('#contact-form').submit(function(e) {
+            alert('hi');
+        });
+    </script>
+    <!--Email sending through js end-->
 
     <!--All Js Here-->
     <!-- jquery latest version -->
@@ -550,6 +558,8 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDf64CyWpOBCEocXjocJL_wZiW82hNtbTA&amp;callback=initMap" async defer></script>
 
 
+    <!-- alertify js file-->
+    <script src="assets/js/alertify.min.js"></script>
     <!-- template main js file -->
     <script src="assets/js/main.js"></script>
 </body>
