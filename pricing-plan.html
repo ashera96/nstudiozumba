@@ -227,28 +227,55 @@
         data.on('value', function(snapshot) {
             document.getElementById('packages').innerHTML ="";
             snapshot.val().forEach(function (a) {
-                document.getElementById('packages').innerHTML += ' <div class="col-md-6">\n' +
-                    '                        <div class="price-box">\n' +
-                    '                            <div class="price-empty">\n' +
-                    '                            </div>\n' +
-                    '                            <div class="price-quantity">\n' +
-                    '                                <div class="qnty-box">\n' +
-                    '                                    <div class="box-element">\n' +
-                    '                                        <h5>Rs.'+a.amount+'</h5>\n' +
-                    '                                        <p>'+a.validity+'</p>\n' +
-                    '                                    </div>\n' +
-                    '                                </div>\n' +
-                    '                                <div class="price-dtl">\n' +
-                    '                                    <ul>\n' +
-                    '                                        <li class="first-child"><h3>'+a.name+'</h3></li>\n' +
-                    '                                        <li>'+a.service+'</li>\n' +
-                    '                                        <li>One time registration fee of Rs.'+a.regfee+'</li>\n' +
-                    '                                    </ul>\n' +
-                    '\n' +
-                    '                                </div>\n' +
-                    '                            </div>\n' +
-                    '                        </div>\n' +
-                    '                    </div>'
+                if (a.regfee!=0){
+                    document.getElementById('packages').innerHTML += ' <div class="col-md-6">\n' +
+                        '                        <div class="price-box">\n' +
+                        '                            <div class="price-empty">\n' +
+                        '                            </div>\n' +
+                        '                            <div class="price-quantity">\n' +
+                        '                                <div class="qnty-box">\n' +
+                        '                                    <div class="box-element">\n' +
+                        '                                        <h5>Rs.'+a.amount+'</h5>\n' +
+                        '                                        <p>'+a.validity+'</p>\n' +
+                        '                                    </div>\n' +
+                        '                                </div>\n' +
+                        '                                <div class="price-dtl">\n' +
+                        '                                    <ul>\n' +
+                        '                                        <li class="first-child"><h3>'+a.name+'</h3></li>\n' +
+                        '                                        <li>'+a.service+'</li>\n' +
+                        '                                        <li>One time registration fee of Rs.'+a.regfee+'</li>\n' +
+                        '                                    </ul>\n' +
+                        '\n' +
+                        '                                </div>\n' +
+                        '                            </div>\n' +
+                        '                        </div>\n' +
+                        '                    </div>'
+                }
+                else{
+                    document.getElementById('packages').innerHTML += ' <div class="col-md-6">\n' +
+                        '                        <div class="price-box">\n' +
+                        '                            <div class="price-empty">\n' +
+                        '                            </div>\n' +
+                        '                            <div class="price-quantity">\n' +
+                        '                                <div class="qnty-box">\n' +
+                        '                                    <div class="box-element">\n' +
+                        '                                        <h5>Rs.'+a.amount+'</h5>\n' +
+                        '                                        <p>'+a.validity+'</p>\n' +
+                        '                                    </div>\n' +
+                        '                                </div>\n' +
+                        '                                <div class="price-dtl">\n' +
+                        '                                    <ul>\n' +
+                        '                                        <li class="first-child"><h3>'+a.name+'</h3></li>\n' +
+                        '                                        <li>'+a.service+'</li>\n' +
+                        '                                        <li>No registration fee required</li>\n' +
+                        '                                    </ul>\n' +
+                        '\n' +
+                        '                                </div>\n' +
+                        '                            </div>\n' +
+                        '                        </div>\n' +
+                        '                    </div>'
+                }
+
             })
             // window.alert(snapshot.val().length);
         });
