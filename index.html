@@ -53,7 +53,25 @@
         <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+        .pagination {
+            display: inline-block;
+        }
 
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        .pagination a.active {
+            background-color:rgba(252, 50, 138, 0.8);
+            color: white;
+        }
+
+        .pagination a:hover:not(.active) {background-color: #ddd;}
+    </style>
 </head>
 
 <body>
@@ -317,7 +335,7 @@
         <!--BMI calculating area end-->
 
         <!--Notifications area start-->
-        <div class="about-area pad90">
+        <div id="notification" class="about-area pad90">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -340,6 +358,7 @@
                                 </div>
                                 <br>
                             </div>
+                            <div id="paginate" class="pagination"></div>
                         </div>
                     </div>
                 </div>
@@ -347,10 +366,26 @@
         </div>
         <!--Notifications area end-->
 <script>
-    var data = firebase.database().ref('notifications').orderByChild('createdat').limitToLast(5);
+    var pagearray=[];
+    var last=0;
+    var data = firebase.database().ref('notifications');
+    data.on('value', function(snapshot) {
+        document.getElementById('paginate').innerHTML='';
+        snapshot.val().reverse().forEach(function (a) {
+            pagearray.push(a.id)
+        })
+        var ans=Math.floor(pagearray.length/5)
+        // alert((ans))
+        for(var i=0;i<=ans;i++){
+            document.getElementById('paginate').innerHTML+='<a id='+i+' href="#notification" onclick="page(\''+i+'\')">'+(i+1)+'</a>'
+        }
+        document.getElementById(last).setAttribute("class","active");
+    });
+
     var imgstorage = firebase.storage();
     var pathReference;
-    data.on('value', function(snapshot) {
+    var datadisp = firebase.database().ref('notifications').orderByKey().limitToLast(5);
+    datadisp.on('value', function(snapshot) {
         document.getElementById('posts').innerHTML='';
         snapshot.val().reverse().forEach(function (a) {
             document.getElementById('posts').innerHTML+='<div>\n' +
@@ -382,9 +417,56 @@
                 });
             }
 
-            // alert(1)
         })
+
     });
+
+    function page(i) {
+        var endAt=pagearray[i*5]
+        var imgstorage = firebase.storage();
+        var pathReference;
+        var datadisp = firebase.database().ref('notifications').orderByKey().endAt(""+endAt).limitToLast(5);
+        datadisp.on('value', function(snapshot) {
+            document.getElementById('posts').innerHTML='';
+            document.getElementById(last).setAttribute("class","");
+            document.getElementById(i).setAttribute("class","active")
+            last=i;
+            snapshot.val().reverse().forEach(function (a) {
+                document.getElementById('posts').innerHTML+='<div>\n' +
+                    '                                    <div class="card mt15 shadow-lg" style="box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),0 5px 15px 0 rgba(0,0,0,0.08);">\n' +
+                    '                                        <h4 class="card-header mt20" style="color: #fc328a">'+a.title+'</h4>\n' +
+                    '                                        <div class="card-body">\n' +
+                    '                                            <div class="card-text ml-4 mr-4 " style="color: #343a40;">\n' +
+                    '                                                <div class="row mb-4 justify-content-center">\n'+a.message+'</div>\n' +
+                    '                                                <!--@if($post->image)-->\n' +
+                    '                                                <img id='+a.image+' src="" style="border-radius: 15px; display: block ; margin:0 auto ; max-height: 100%;max-width: 100%;" />\n' +
+                    '                                                <br><br>\n' +
+                    '                                                <!--@endif-->\n' +
+                    '                                            </div>\n' +
+                    '                                        </div>\n' +
+                    '                                        <div class="card-footer text-muted">\n'+a.createdat+
+                    '                                        </div>\n' +
+                    '                                    </div>\n' +
+                    '                                    <br>\n' +
+                    '                                </div>\n' +
+                    '                                <br>';
+                if(a.image!="none"){
+                    pathReference = imgstorage.ref('notifications/'+a.image);
+                    pathReference.getDownloadURL().then(function(url) {
+                        document.getElementById(a.image).style.display="block";
+                        document.getElementById(a.image).src=url;
+                        // document.getElementById('img').src=url;
+                    }).catch(function(error) {
+                        // alert("something went wrong")
+                    });
+                }
+
+            })
+
+        });
+    }
+
+
 </script>
         <footer>
             <section class="footer-area bg3 parallax overlay pt90">
