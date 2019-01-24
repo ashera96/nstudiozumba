@@ -7,7 +7,7 @@ data.on('value', function(snapshot) {
             '  <td class="product-name"><a href="#">'+a.service+'</a></td>\n' +
             '  <td class="product-name"><input type="number" value='+a.amount+' readonly/></td>\n' +
             '  <td class="product-name"><input type="number" value='+a.regfee+' readonly/></td>\n' +
-            '  <td class="product-remove"><a><i class="fa fa-times" onclick="edit(\''+a.id+'\',\''+a.name+'\',\''+a.service+'\',\''+a.amount+'\',\''+a.regfee+'\')"></i></a></td>\n' +
+            '  <td class="product-remove"><a><i class="fa fa-pencil" onclick="edit(\''+a.id+'\',\''+a.name+'\',\''+a.service+'\',\''+a.amount+'\',\''+a.regfee+'\')"></i></a></td>\n' +
             '  <td class="product-remove"><a><i class="fa fa-times" onclick="remove(\''+a.id+'\')"></i></a></td>\n' +
             '  </tr>'
     })
