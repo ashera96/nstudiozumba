@@ -6,8 +6,9 @@ data.on('value', function(snapshot) {
             '  <td class="product-name"><a href="#">'+a.name+'</a></td>\n' +
             '  <td class="product-name"><a href="#">'+a.service+'</a></td>\n' +
             '  <td class="product-name"><input type="number" value='+a.amount+' readonly/></td>\n' +
+            '  <td class="product-name"><a href="#">'+a.validity+'</a></td>\n' +
             '  <td class="product-name"><input type="number" value='+a.regfee+' readonly/></td>\n' +
-            '  <td class="product-remove"><a><i class="fa fa-pencil" onclick="edit(\''+a.id+'\',\''+a.name+'\',\''+a.service+'\',\''+a.amount+'\',\''+a.regfee+'\')"></i></a></td>\n' +
+            '  <td class="product-remove"><a><i class="fa fa-pencil" onclick="edit(\''+a.id+'\',\''+a.name+'\',\''+a.service+'\',\''+a.amount+'\',\''+a.regfee+'\',\''+a.validity+'\')"></i></a></td>\n' +
             '  <td class="product-remove"><a><i class="fa fa-times" onclick="remove(\''+a.id+'\')"></i></a></td>\n' +
             '  </tr>'
     })
@@ -31,6 +32,7 @@ function additem(){
     var service=$('#service').val();
     var amount=$('#amount').val();
     var regfee=$('#regfee').val();
+    var validity=$('#validity').val();
     if((name==""||service==""||amount==""||regfee=="")==true){
         alert('Please fill all fields correctly')
     }else{
@@ -46,6 +48,7 @@ function additem(){
             service: service,
             amount: amount,
             regfee: regfee,
+            validity: validity,
         }, function(error) {
             if (error) {
                 alert('Failed..! Try Again');
@@ -65,6 +68,7 @@ function update(id) {
     var service=$('#service').val();
     var amount=$('#amount').val();
     var regfee=$('#regfee').val();
+    var validity=$('#validity').val();
     if((name==""||service==""||amount==""||regfee=="")==true){
         alert('Please fill all fields correctly')
     }else{
@@ -77,6 +81,7 @@ function update(id) {
                 service: service,
                 amount: amount,
                 regfee: regfee,
+                validity:validity
             }, function(error) {
                 if (error) {
                     alert('Failed..! Try Again');
@@ -92,7 +97,7 @@ function update(id) {
     }
 }
 
-function edit(id,name,service,amount,regfee) {
+function edit(id,name,service,amount,regfee,validity) {
     document.getElementById('header').innerHTML='<img src="../assets/images/logo/ttl-bar.png" alt="title-img">\n' +
         '                            <h3>Update Items</h3>\n' +
         '                            <p>Please change the related data and hit update button</p>';
@@ -105,6 +110,12 @@ function edit(id,name,service,amount,regfee) {
         document.getElementById('regfee').selectedIndex=0;
     }else{
         document.getElementById('regfee').selectedIndex=1;
+    }
+
+    if(validity=="Monthly"){
+        document.getElementById('validity').selectedIndex=0;
+    }else{
+        document.getElementById('validity').selectedIndex=1;
     }
 
     $('#additems').modal('show');
