@@ -3,11 +3,11 @@ var data = firebase.database().ref('notifications');
 
 data.on('value', function(snapshot) {
     document.getElementById('tbody').innerHTML ="";
-    snapshot.val().forEach(function (a) {
+    snapshot.val().reverse().forEach(function (a) {
         document.getElementById('tbody').innerHTML +='<tr>\n' +
-                '  <td class="product-name"><a href="#">'+a.createdat+'</a></td>\n' +
+                '  <td class="product-name"><a href="#" readonly>'+a.createdat+'</a></td>\n' +
                 '  <td class="product-name"><a href="#">'+a.title+'</a></td>\n' +
-                '  <td class="product-name"><a href="#">'+a.message+'</a></td>\n' +
+                '  <td class="product-name text-left"><a href="#">'+a.message+'</a></td>\n' +
                 '  <td class="product-name"><a href="#">'+a.image+'</a></td>\n' +
                 '  <td class="product-remove"><a><i class="fa fa-times" onclick="edit(\''+a.id+'\',\''+a.title+'\',\''+a.message+'\',\''+a.image+'\')"></i></a></td>\n' +
                 '  <td class="product-remove"><a><i class="fa fa-times" onclick="remove(\''+a.image+'\',\''+a.id+'\')"></i></a></td>\n' +

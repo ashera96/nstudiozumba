@@ -347,12 +347,12 @@
         </div>
         <!--Notifications area end-->
 <script>
-    var data = firebase.database().ref('notifications');
+    var data = firebase.database().ref('notifications').orderByChild('createdat').limitToLast(5);
     var imgstorage = firebase.storage();
     var pathReference;
     data.on('value', function(snapshot) {
         document.getElementById('posts').innerHTML='';
-        snapshot.val().forEach(function (a) {
+        snapshot.val().reverse().forEach(function (a) {
             document.getElementById('posts').innerHTML+='<div>\n' +
                 '                                    <div class="card mt15 shadow-lg" style="box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),0 5px 15px 0 rgba(0,0,0,0.08);">\n' +
                 '                                        <h4 class="card-header mt20" style="color: #fc328a">'+a.title+'</h4>\n' +
