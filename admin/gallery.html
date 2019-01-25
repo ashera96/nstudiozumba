@@ -56,23 +56,8 @@
     <![endif]-->
     <script src="../assets/js/adminauth.js"></script>
     <style>
-        .inputcls{
-            /*position: relative;*/
-            overflow: hidden;
-            position: absolute;
-            top: 0;
-            right: 0;
-            min-width: 100px;
-            /*min-height: 100%;*/
-            font-size: 100px;
-            text-align: right;
-            filter: alpha(opacity=0);
-            opacity: 0;
-            outline: none;
-            background: black;
-            cursor: inherit;
-            display: block;
-            /*z-index: -10;*/
+        input[type="file"] {
+            display: none;
         }
     </style>
 </head>
@@ -180,7 +165,8 @@
                             <p style="margin: 10px">Manage Gallery Uploads</p>
 
 
-                            <span class="btn active btn-primary ">Click Here to Upload<input id="image" type="file" class="inputcls" accept="image/*" onchange="loadFile(event)" style=""/></span>
+                            <label for="image" class="btn active btn-primary">Click Here to Upload</label>
+                            <input id="image" type="file" accept="image/*" onchange="loadFile(event)"/>
                             <div class="row justify-content-center mt-2">
                                 <h6 class="mb-0 text-dark">Please upload images of the dimensions 480px x 480px</h6>
                             </div>
