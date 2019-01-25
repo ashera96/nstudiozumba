@@ -161,30 +161,33 @@
                     <div class="col-md-8">
                         <div class="contact-form mt20">
                             <div class="appointment-schedule">
-                                <form class="appointment-form" id="contact-form">
+
+                                <form class="appointment-form" action="https://www.enformed.io/ln9znajo" method="POST">
+                                <!--<form class="appointment-form" id="contact-form">-->
+
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <input type="text" placeholder="Name" class="form-control ">
+                                                <input type="text" placeholder="Name" class="form-control" name="name">
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <input type="text" placeholder="Email" class="form-control">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <input type="text" placeholder="Subject" class="form-control">
+                                                <input type="text" placeholder="Email" class="form-control" name="email">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <textarea class="form-control" name="Message" id="text-area" cols="10" rows="5" placeholder="Your comment text here"></textarea>
+                                                <input type="text" placeholder="Subject" class="form-control" name="subject">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <textarea class="form-control" name="message" id="text-area" cols="10" rows="5" placeholder="Your comment text here"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -313,9 +316,20 @@
 
     <!--Email sending through js start-->
     <script>
-        $('#contact-form').submit(function(e) {
-            alert('hi');
-        });
+        // $('#contact-form').submit(function(e) {
+        //     alert('hi');
+        // });
+
+        // $.ajax({
+        //     method: 'POST',
+        //     url: 'https://www.enformed.io/ln9znajo/',
+        //     dataType: 'json',
+        //     accepts: 'application/json',
+        //     data: $('#contact-form').serialize(),
+        //     //$('#'+packageId+'f').serialize();
+        //     success: (data) => console.log(data),
+        //     error: (err) => console.log(err)
+        // });
     </script>
     <!--Email sending through js end-->
 
