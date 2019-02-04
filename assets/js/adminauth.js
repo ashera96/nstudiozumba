@@ -3,7 +3,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         document.getElementById('body').style.display="block";
     } else {
         var getUrl = window.location;
-        var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+        var baseUrl = getUrl.protocol + "//" + getUrl.host;
         location.replace(baseUrl+'/login.html')
     }
 });
