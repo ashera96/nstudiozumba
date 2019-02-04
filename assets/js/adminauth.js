@@ -4,6 +4,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     } else {
         var getUrl = window.location;
         var baseUrl = getUrl.protocol + "//" + getUrl.host;
+        alert(baseUrl)
         location.replace(baseUrl+'/login.html')
     }
 });
