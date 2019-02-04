@@ -59,7 +59,7 @@
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
                 var getUrl = window.location;
-                var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+                var baseUrl = getUrl.protocol + "//" + getUrl.host;
                 location.replace(baseUrl+'/admin/dashboard.html')
             } else {
                 document.getElementById('body').style.display="block"
