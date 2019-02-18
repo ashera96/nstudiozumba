@@ -384,9 +384,10 @@
         document.getElementById('paginate').innerHTML='';
         snapshot.val().reverse().forEach(function (a) {
             pagearray.push(a.id)
+            // alert(a.id)
         })
         var ans=Math.floor(pagearray.length/5)
-        // alert((ans))
+        alert((ans))
         for(var i=0;i<=ans;i++){
             document.getElementById('paginate').innerHTML+='<a id='+i+' href="#notification" onclick="page(\''+i+'\')">'+(i+1)+'</a>'
         }
