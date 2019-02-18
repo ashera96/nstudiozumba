@@ -379,19 +379,23 @@
 <script>
     var pagearray=[];
     var last=0;
+    var keys=[];
     var data = firebase.database().ref('notifications');
     data.on('value', function(snapshot) {
+        keys = Object.keys(snapshot.val());
         document.getElementById('paginate').innerHTML='';
+        pagearray=[];
         snapshot.val().reverse().forEach(function (a) {
             pagearray.push(a.id)
             // alert(a.id)
         })
         var ans=Math.floor(pagearray.length/5)
-        alert((ans))
+        // alert((ans))
         for(var i=0;i<=ans;i++){
             document.getElementById('paginate').innerHTML+='<a id='+i+' href="#notification" onclick="page(\''+i+'\')">'+(i+1)+'</a>'
         }
         document.getElementById(last).setAttribute("class","active");
+        // alert(pagearray)
     });
 
     var imgstorage = firebase.storage();
@@ -434,16 +438,23 @@
     });
 
     function page(i) {
+        // alert(i)
+        // i=i+1;
+        // alert(pagearray)
         var endAt=pagearray[i*5]
         var imgstorage = firebase.storage();
         var pathReference;
+        // alert(endAt)
+        // alert(keys[endAt-1])
         var datadisp = firebase.database().ref('notifications').orderByKey().endAt(""+endAt).limitToLast(5);
         datadisp.on('value', function(snapshot) {
             document.getElementById('posts').innerHTML='';
             document.getElementById(last).setAttribute("class","");
             document.getElementById(i).setAttribute("class","active")
             last=i;
+            // alert(snapshot.numChildren())
             snapshot.val().reverse().forEach(function (a) {
+                // alert(a.title)
                 document.getElementById('posts').innerHTML+='<div>\n' +
                     '                                    <div class="card mt15 shadow-lg" style="box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),0 5px 15px 0 rgba(0,0,0,0.08);">\n' +
                     '                                        <h4 class="card-header mt20" style="color: #fc328a">'+a.title+'</h4>\n' +
