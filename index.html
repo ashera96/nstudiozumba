@@ -391,53 +391,67 @@
         })
         var ans=Math.floor(pagearray.length/5)
         // alert((ans))
-        for(var i=0;i<=ans;i++){
-            document.getElementById('paginate').innerHTML+='<a id='+i+' href="#notification" onclick="page(\''+i+'\')">'+(i+1)+'</a>'
+        if(pagearray.length%5==0){
+            for(var i=0;i<ans;i++){
+                document.getElementById('paginate').innerHTML+='<a id='+i+' href="#notification" onclick="page(\''+i+'\')">'+(i+1)+'</a>'
+            }
         }
+        else{
+            for(var i=0;i<=ans;i++){
+                document.getElementById('paginate').innerHTML+='<a id='+i+' href="#notification" onclick="page(\''+i+'\')">'+(i+1)+'</a>'
+            }
+        }
+
         document.getElementById(last).setAttribute("class","active");
         // alert(pagearray)
     });
 
     var imgstorage = firebase.storage();
     var pathReference;
-    var datadisp = firebase.database().ref('notifications').orderByKey().limitToLast(5);
+    var counter=0;
+    var datadisp = firebase.database().ref('notifications').orderByKey();
     datadisp.on('value', function(snapshot) {
         document.getElementById('posts').innerHTML='';
         snapshot.val().reverse().forEach(function (a) {
-            document.getElementById('posts').innerHTML+='<div>\n' +
-                '                                    <div class="card mt15 shadow-lg" style="box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),0 5px 15px 0 rgba(0,0,0,0.08);">\n' +
-                '                                        <h4 class="card-header mt20" style="color: #fc328a">'+a.title+'</h4>\n' +
-                '                                        <div class="card-body">\n' +
-                '                                            <div class="card-text ml-4 mr-4 " style="color: #343a40;">\n' +
-                '                                                <div class="row mb-4 justify-content-center">\n'+a.message+'</div>\n' +
-                '                                                <!--@if($post->image)-->\n' +
-                '                                                <img id='+a.image+' src="" style="border-radius: 15px; display: block ; margin:0 auto ; max-height: 100%;max-width: 100%;" />\n' +
-                '                                                <br><br>\n' +
-                '                                                <!--@endif-->\n' +
-                '                                            </div>\n' +
-                '                                        </div>\n' +
-                '                                        <div class="card-footer text-muted">\n'+a.createdat+
-                '                                        </div>\n' +
-                '                                    </div>\n' +
-                '                                    <br>\n' +
-                '                                </div>\n' +
-                '                                <br>';
-            if(a.image!="none"){
-                pathReference = imgstorage.ref('notifications/'+a.image);
-                pathReference.getDownloadURL().then(function(url) {
-                    document.getElementById(a.image).style.display="block";
-                    document.getElementById(a.image).src=url;
+            // alert(pagearray)
+            if (counter < 5){
+                document.getElementById('posts').innerHTML += '<div>\n' +
+                    '                                    <div class="card mt15 shadow-lg" style="box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),0 5px 15px 0 rgba(0,0,0,0.08);">\n' +
+                    '                                        <h4 class="card-header mt20" style="color: #fc328a">' + a.title + '</h4>\n' +
+                    '                                        <div class="card-body">\n' +
+                    '                                            <div class="card-text ml-4 mr-4 " style="color: #343a40;">\n' +
+                    '                                                <div class="row mb-4 justify-content-center">\n' + a.message + '</div>\n' +
+                    '                                                <!--@if($post->image)-->\n' +
+                    '                                                <img id=' + a.image + ' src="" style="border-radius: 15px; display: block ; margin:0 auto ; max-height: 100%;max-width: 100%;" />\n' +
+                    '                                                <br><br>\n' +
+                    '                                                <!--@endif-->\n' +
+                    '                                            </div>\n' +
+                    '                                        </div>\n' +
+                    '                                        <div class="card-footer text-muted">\n' + a.createdat +
+                    '                                        </div>\n' +
+                    '                                    </div>\n' +
+                    '                                    <br>\n' +
+                    '                                </div>\n' +
+                    '                                <br>';
+            if (a.image != "none") {
+                pathReference = imgstorage.ref('notifications/' + a.image);
+                pathReference.getDownloadURL().then(function (url) {
+                    document.getElementById(a.image).style.display = "block";
+                    document.getElementById(a.image).src = url;
                     // document.getElementById('img').src=url;
-                }).catch(function(error) {
+                }).catch(function (error) {
                     // alert("something went wrong")
                 });
             }
+            counter++;
+        }
 
         })
-
+    // alert(counter)
     });
 
     function page(i) {
+        var counter=0;
         // alert(i)
         // i=i+1;
         // alert(pagearray)
@@ -446,7 +460,7 @@
         var pathReference;
         // alert(endAt)
         // alert(keys[endAt-1])
-        var datadisp = firebase.database().ref('notifications').orderByKey().endAt(""+endAt).limitToLast(5);
+        var datadisp = firebase.database().ref('notifications').orderByKey();
         datadisp.on('value', function(snapshot) {
             document.getElementById('posts').innerHTML='';
             document.getElementById(last).setAttribute("class","");
@@ -455,34 +469,37 @@
             // alert(snapshot.numChildren())
             snapshot.val().reverse().forEach(function (a) {
                 // alert(a.title)
-                document.getElementById('posts').innerHTML+='<div>\n' +
+                if (counter >= i*5 && counter<i*5+5){
+                document.getElementById('posts').innerHTML += '<div>\n' +
                     '                                    <div class="card mt15 shadow-lg" style="box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),0 5px 15px 0 rgba(0,0,0,0.08);">\n' +
-                    '                                        <h4 class="card-header mt20" style="color: #fc328a">'+a.title+'</h4>\n' +
+                    '                                        <h4 class="card-header mt20" style="color: #fc328a">' + a.title + '</h4>\n' +
                     '                                        <div class="card-body">\n' +
                     '                                            <div class="card-text ml-4 mr-4 " style="color: #343a40;">\n' +
-                    '                                                <div class="row mb-4 justify-content-center">\n'+a.message+'</div>\n' +
+                    '                                                <div class="row mb-4 justify-content-center">\n' + a.message + '</div>\n' +
                     '                                                <!--@if($post->image)-->\n' +
-                    '                                                <img id='+a.image+' src="" style="border-radius: 15px; display: block ; margin:0 auto ; max-height: 100%;max-width: 100%;" />\n' +
+                    '                                                <img id=' + a.image + ' src="" style="border-radius: 15px; display: block ; margin:0 auto ; max-height: 100%;max-width: 100%;" />\n' +
                     '                                                <br><br>\n' +
                     '                                                <!--@endif-->\n' +
                     '                                            </div>\n' +
                     '                                        </div>\n' +
-                    '                                        <div class="card-footer text-muted">\n'+a.createdat+
+                    '                                        <div class="card-footer text-muted">\n' + a.createdat +
                     '                                        </div>\n' +
                     '                                    </div>\n' +
                     '                                    <br>\n' +
                     '                                </div>\n' +
                     '                                <br>';
-                if(a.image!="none"){
-                    pathReference = imgstorage.ref('notifications/'+a.image);
-                    pathReference.getDownloadURL().then(function(url) {
-                        document.getElementById(a.image).style.display="block";
-                        document.getElementById(a.image).src=url;
+                if (a.image != "none") {
+                    pathReference = imgstorage.ref('notifications/' + a.image);
+                    pathReference.getDownloadURL().then(function (url) {
+                        document.getElementById(a.image).style.display = "block";
+                        document.getElementById(a.image).src = url;
                         // document.getElementById('img').src=url;
-                    }).catch(function(error) {
+                    }).catch(function (error) {
                         // alert("something went wrong")
                     });
                 }
+            }
+            counter++;
 
             })
 

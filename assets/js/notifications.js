@@ -68,14 +68,21 @@ function remove(name,id) {
         var storageRef = firebase.storage().ref();
         var dataRef = storageRef.child('notifications/'+name);
         dataRef.delete().then(function() {
-            // File deleted successfully
+            firebase.database().ref('notifications/'+id).remove();
+            alert('Removed Success')
+            location.reload();
         }).catch(function(error) {
             alert("Something Went Wrong..!")
         });
     }
-    firebase.database().ref('notifications/'+id).remove();
-    alert('Removed Success')
+    else{
+        firebase.database().ref('notifications/'+id).remove();
+        alert('Removed Success')
+        window.location.reload();
+    }
+
 }
+
 function additembutton() {
     document.getElementById('header').innerHTML='<img src="../assets/images/logo/ttl-bar.png" alt="title-img">\n' +
         '                            <h3>Add Items</h3>\n' +
