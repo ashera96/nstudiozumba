@@ -408,9 +408,9 @@
 
     var imgstorage = firebase.storage();
     var pathReference;
-    var counter=0;
     var datadisp = firebase.database().ref('notifications').orderByKey();
     datadisp.on('value', function(snapshot) {
+        var counter=0;
         document.getElementById('posts').innerHTML='';
         snapshot.val().reverse().forEach(function (a) {
             // alert(pagearray)
@@ -462,6 +462,7 @@
         // alert(keys[endAt-1])
         var datadisp = firebase.database().ref('notifications').orderByKey();
         datadisp.on('value', function(snapshot) {
+            var counter=0;
             document.getElementById('posts').innerHTML='';
             document.getElementById(last).setAttribute("class","");
             document.getElementById(i).setAttribute("class","active")
